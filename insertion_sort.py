@@ -22,7 +22,7 @@ def insertionSort(array):
     if len(array) == 0:
         return []
 
-    print(f"starting with: {array}")
+    # print(f"starting with: {array}")
 
     # keep track of the array slice
     sliceStartIndex = 0
@@ -41,35 +41,35 @@ def insertionSort(array):
     # find the right spot for it
         # store in a temp variable
         currentValueToSort = array[sliceEndIndex]
-        print(f"currentValueToSort: {currentValueToSort}")
+        # print(f"currentValueToSort: {currentValueToSort}")
         if currentValueToSort < largestValueSoFar:
             for indexOfValueToCheckAgainst in range(0, sliceEndIndex):
                 valueToCheckAgainst = array[indexOfValueToCheckAgainst]
-                print(f"valueToCheckAgainst: {valueToCheckAgainst}")
+                # print(f"valueToCheckAgainst: {valueToCheckAgainst}")
                 # find the exact spot to place currentValueToSort
                 if currentValueToSort < valueToCheckAgainst:
-                    print("currentValueToSort is < valueToCheckAgainst")
+                    # print("currentValueToSort is < valueToCheckAgainst")
                     # move whatever's between indexOfValueTo.. and sliceEndIndex
                     # over to the right...
                     for movingIndex in reversed(range(indexOfValueToCheckAgainst + 1, sliceEndIndex + 1)):
-                        print(f"movingIndex: {movingIndex}")
-                        print(f"array[movingIndex] was: {array[movingIndex]}")
+                        # print(f"movingIndex: {movingIndex}")
+                        # print(f"array[movingIndex] was: {array[movingIndex]}")
                         array[movingIndex] = array[movingIndex - 1]
-                        print(f"array[movingIndex] is now: {array[movingIndex]}")
+                        # print(f"array[movingIndex] is now: {array[movingIndex]}")
 
                     # ...and place currentValueToSort at indexOfValueTo...
                     array[indexOfValueToCheckAgainst] = currentValueToSort
-                    print(f"array is now: {array}")
+                    # print(f"array is now: {array}")
                     break
         else:
             largestValueSoFar = currentValueToSort
-            print(f"setting largestValueSoFar to: {largestValueSoFar}")
+            # print(f"setting largestValueSoFar to: {largestValueSoFar}")
 
         # increment sliceEnd
         sliceEndIndex += 1
 
     # return sorted array
-    print(f"final result: {array}")
+    # print(f"final result: {array}")
     return array
 
 insertionSort(array)
